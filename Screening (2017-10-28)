@@ -1,0 +1,76 @@
+{
+  "name": "Screening",
+  "description": "",
+  "variables": [
+    {
+      "isTrackingUrl": false,
+      "urlType": "STANDARD_HTTP",
+      "label": "HTML5BANNER",
+      "uniqueName": "HTML5BANNER",
+      "description": "Provide link to html5 creative",
+      "isRequired": false,
+      "variableType": "URL"
+    },
+    {
+      "mimeTypes": [
+        "JPG",
+        "PNG"
+      ],
+      "label": "BACKGROUND",
+      "uniqueName": "BACKGROUND",
+      "isRequired": true,
+      "variableType": "ASSET"
+    },
+    {
+      "choices": [
+        {
+          "label": "FIXED",
+          "value": "FIXED"
+        },
+        {
+          "label": "ABSOLUTE",
+          "value": "ABSOLUTE"
+        }
+      ],
+      "allowOtherChoice": false,
+      "defaultValue": "FIXED",
+      "label": "BGPOSITION",
+      "uniqueName": "BGPOSITION",
+      "isRequired": true,
+      "variableType": "LIST"
+    },
+    {
+      "choices": [
+        {
+          "label": "750X200",
+          "value": "750X200"
+        },
+        {
+          "label": "750X300",
+          "value": "750X300"
+        }
+      ],
+      "allowOtherChoice": false,
+      "defaultValue": "750X200",
+      "label": "BANNERSIZE",
+      "uniqueName": "BANNERSIZE",
+      "isRequired": true,
+      "variableType": "LIST"
+    },
+    {
+      "isTrackingUrl": false,
+      "urlType": "STANDARD_HTTP",
+      "label": "CLICKURL",
+      "uniqueName": "CLICKURL",
+      "isRequired": true,
+      "variableType": "URL"
+    }
+  ],
+  "formatter": "\u003cscript\u003e\nvar DFPTMPL\u003dDFPTMPL||{};DFPTMPL.html5banner\u003d\"[%HTML5BANNER%]\",DFPTMPL.size\u003d\"[%BANNERSIZE%]\",DFPTMPL.background\u003d\"[%BACKGROUND%]\",DFPTMPL.pos\u003d\"[%BGPOSITION%]\",DFPTMPL.click\u003d\"%%CLICK_URL_ESC%%\",DFPTMPL.clickurl\u003d\"[%CLICKURL%]\",DFPTMPL.cash\u003d\"%%CACHEBUSTER%%\",function(){var e\u003d{};e.onReady\u003dfunction(t){e.setBg(),DFPTMPL.html5banner\u0026\u0026e.createHtml5banner()},e.setBg\u003dfunction(){var e;e\u003d\"FIXED\"\u003d\u003dDFPTMPL.pos?\"fixed\":\"scroll\";var t\u003ddocument.body,n\u003d\"transparent url(\u0027\"+DFPTMPL.background+\"\u0027) no-repeat \"+e+\" top center\";t.style.background\u003dn},e.createHtml5banner\u003dfunction(){var e\u003dDFPTMPL.size.split(\"X\"),t\u003de[0],n\u003de[1],P\u003ddocument.createElement(\"div\");P.style.width\u003dt+\"px\",P.style.height\u003dn+\"px\",P.style.margin\u003d\"auto\";var a\u003ddocument.getElementsByTagName(\"script\");(a\u003da[a.length-1]).parentNode.appendChild(P);var r\u003ddocument.createElement(\"iframe\");r.style.width\u003dt+\"px\",r.style.height\u003dn+\"px\",r.style.border\u003d\"none\",r.setAttribute(\"scrolling\",\"no\");var c\u003d\"?redir\u003d\"+DFPTMPL.click+DFPTMPL.clickurl;r.src\u003dDFPTMPL.html5banner+c,P.appendChild(r)},document.addEventListener(\"DFPTMPL_READY\",function(t){e.onReady(t.detail)}),Object.assign(DFPTMPL,e)}(),DFPTMPL.ready\u003dnew CustomEvent(\"DFPTMPL_READY\",{detail:{isReady:!0}}),document.dispatchEvent(DFPTMPL.ready);\n\u003c/script\u003e\n",
+  "type": "USER_DEFINED",
+  "isInterstitial": false,
+  "isNativeEligible": false,
+  "isNativeVideoEligible": false,
+  "isNative360ImageEligible": false,
+  "isSafeFrameCompatible": false
+}
